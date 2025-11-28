@@ -13,11 +13,11 @@ jobs:
           node-version: 18
       - run: npm install
       - run: npm run build --if-present
-      - run: ls -lah dist/      
+      - run: ls -lah build/   # Debug: confirm folder exists
       - uses: actions/upload-artifact@v4
         with:
-          name: vite-dist
-          path: dist/
+          name: vite-build
+          path: build/
 
   test:
     needs: build
@@ -25,7 +25,7 @@ jobs:
     steps:
       - uses: actions/download-artifact@v4
         with:
-          name: vite-dist
+          name: vite-build
       - run: echo "passed"
 
   deploy:
@@ -34,10 +34,10 @@ jobs:
     steps:
       - uses: actions/download-artifact@v4
         with:
-          name: vite-dist
+          name: vite-build
       - uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ca-central-1
-      - run: aws s3 sync ./dist s3://iqbal-portfolio-vite --delete
+      - run: aws s3 sync ./build s3://iqbal-portfolio-vite --delete
