@@ -92,11 +92,11 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.6 }}
           >
             <a
-              href="mailto:Singhiqbal491@gmail.com"
+              href="mailto:Singhiqbal4901@gmail.com"
               className="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors"
             >
               <Mail className="w-5 h-5" />
-              <span>Singhiqbal491@gmail.com</span>
+              <span>Singhiqbal4901@gmail.com</span>
             </a>
             <a
               href="tel:+15147129837"
