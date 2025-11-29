@@ -40,7 +40,7 @@ export function Contact() {
 
             <div className="flex flex-col md:flex-row items-center justify-center gap-8">
               <motion.a
-                href="mailto:Singhiqbal491@gmail.com"
+                href="mailto:Singhiqbal4901@gmail.com"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="flex items-center gap-3 px-6 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-xl hover:from-blue-700 hover:to-cyan-700 transition-all shadow-lg hover:shadow-xl"
@@ -50,7 +50,7 @@ export function Contact() {
                       <Mail className="w-5 h-5" />
                       {!isMobile &&<span>Email </span>}
                   </div>
-                  <p>Singhiqbal491@gmail.com</p>
+                  <p>Singhiqbal4901@gmail.com</p>
               </motion.a>
 
               <motion.a
